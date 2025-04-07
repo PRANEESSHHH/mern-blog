@@ -32,8 +32,10 @@ export default function App() {
           <Route path='/create-post' element={<CreatePost />} />
           <Route path='/update-post/:postId' element={<UpdatePost />} />
         </Route>
+        <Route element={<PrivateRoute />}>
+          <Route path='/post/:postSlug' element={<PostPage />} />
+        </Route>
 
-        <Route path='/post/:postSlug' element={<PostPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
